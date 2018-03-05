@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up for PlaceMe</title>
+  </head>
+  <body>
+    <h1>Sign Up for PlaceMe</h1><br>
+    <%= form_for @user do |f| %>
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name %><br>
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name %><br>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %><br>
+      <%= f.submit "Sign Up" %>
+    <% end %>
+  </body>
+</html>
