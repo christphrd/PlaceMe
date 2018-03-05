@@ -1,18 +1,27 @@
 class SessionsController < ApplicationController
+  #BOILERPLATE
 
   def new
-
   end
 
-
   def create
-    if params[:user][:password] == ""
-      redirect_to  '/sessions/new'
-    else
-      @user = User.find_by(name: params[:user][:name])
-      return redirect_to '/sessions/new' unless @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id
-      redirect_to '/users/home'
-    end
+    user = User.find_by(name: params[:user][:name])
+
+    user = user.try(:authenticate, params[:user][:password])
+
+    return redirect_to(controller: 'sessions', action: 'new') unless user
+
+    session[:user_id] = user.id
+
+    @user = user
+
+    #adapt welcome page to our project
+    #redirect_to controller: 'welcome', action: 'home'
+  end
+
+  def destroy
+    session.delete :user_id
+
+    redirect_to '/'
   end
 end
