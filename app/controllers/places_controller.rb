@@ -4,12 +4,20 @@ class PlacesController < ApplicationController
   end
 
   def create
-    byebug
+    
+    @place = Place.create(place_params)
+    @user = User.find(session[:user_id])
+    if @place
+      @user.places << @place
+      redirect_to "/home/#{@user.id}"
+    else
+      render :new
+    end
   end
 
   private
 
   def place_params
-    params.permit(:name, :country)
+    params.permit(:city, :country)
   end
 end

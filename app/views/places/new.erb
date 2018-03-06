@@ -1,12 +1,8 @@
-<%= form_tag places_path do %>
-  <% @places.each do |place| %>
-    <%= fields_for 'places[]', place do |p| %>
-
-    <%= label_tag "Place"%><br>
-    <%= text_field_tag :place %><br>
-    <%= label_tag "Country"%><br>
-    <%= text_field_tag :country %><br>
-    <% end %>
-  <% end %>
+<%= form_tag(controller: 'places', action: 'create', method: 'post') %>
+  <%= label_tag :city %>
+  <%= text_field_tag :city %>
+  <br>
+  <%= label_tag :country %>
+  <%= text_field_tag :country %>
+  <br>
   <%= submit_tag "Submit" %>
-<% end %>
