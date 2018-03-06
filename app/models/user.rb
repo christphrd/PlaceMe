@@ -13,7 +13,6 @@ class User < ApplicationRecord
   end
 
   def visited_places
-
     self.user_places.select do |user_place|
       user_place[:future] == false
     end.map {|user_place| user_place.place}

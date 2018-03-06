@@ -2,6 +2,8 @@ class Place < ApplicationRecord
   has_many :user_places
   has_many :users, through: :user_places
   has_many :comments
+  validates :city, :country, presence: true
+
 
   def people_who_been
 
@@ -14,5 +16,9 @@ class Place < ApplicationRecord
     self.user_places.select do |user_place|
       user_place[:future] == true
     end.map {|user_place| user_place.user}
+  end
+
+  def city_and_country
+    "#{city} - #{country}"
   end
 end

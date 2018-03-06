@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   before_action :authorize_page, only: [:home]
   skip_before_action :require_login, only: [:new, :create]
 
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
     @user.places.build
@@ -41,6 +45,7 @@ class UsersController < ApplicationController
 
 
   def user_params
+    # params.each { |key, value| value.strip!}
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :places_attributes => [:name, :country])
   end
 end
