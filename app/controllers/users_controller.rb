@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :get_user, only: [:home, :show]
+
   def new
     @user = User.new
   end
@@ -8,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     return redirect_to controller: 'users', action: 'new' unless @user.save
     session[:user_id] = @user.id
-    redirect_to @user
+    redirect_to "/users/home/#{@user.id}"
     # redirect_to controller: 'welcome', action: 'home'
 
     # @user = User.new(user_params)
@@ -22,13 +24,21 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
 
 
   end
 
+  def home
+    #code
+  end
+
 
   private
+
+  def get_user
+    @user = User.find(params[:id])
+  end
 
 
   def user_params

@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @user = User.find_by(email: params[:session][:email])
     # byebug
-    user = User.find_by(email: params[:session][:email])
-      if user && user.authenticate(params[:sesison][:password_digest])
+      if @user && @user.authenticate(params[:session][:password])
         # user = user.try(:authenticate, params[:user][:password])
-        log_in user
-        redirect_to user
+        log_in @user
+        redirect_to "/users/home/#{@user.id}"
         # return redirect_to(controller: 'sessions', action: 'new') unless user
         # session[:user_id] = user.id
         # @user = user
