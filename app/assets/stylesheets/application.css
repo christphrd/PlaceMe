@@ -14,10 +14,24 @@
  *= require_self
  */
 
- 
+
 
  h1 {
    text-align: center;
+ }
+
+ div.center {
+   text-align: center;
+ }
+
+ li {
+   list-style: none;
+ }
+
+ 
+
+ .will_go {
+   align: right;
  }
 
  .logout {
