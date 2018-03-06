@@ -21,4 +21,13 @@ class SessionsController < ApplicationController
     session.delete :user_id
     redirect_to '/'
   end
+
+
+  def authorize_page
+    return head(:forbidden) unless session[:user_id] == @user.id
+  end
+
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
+  end
 end

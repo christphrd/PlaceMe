@@ -21,23 +21,23 @@ class UsersController < ApplicationController
   end
 
   def home
-    
+
   end
 
 
   private
+  #
+  # def authorize_page
+  #   return head(:forbidden) unless session[:user_id] == @user.id
+  # end
+  #
+  # def require_login
+  #   return head(:forbidden) unless session.include? :user_id
+  # end
 
-  def authorize_page
-    return head(:forbidden) unless session[:user_id] == @user.id
-  end
-
-  def require_login
-    return head(:forbidden) unless session.include? :user_id
-  end
-
-  def get_user
-    @user = User.find(params[:id])
-  end
+  # def get_user
+  #   @user = User.find(params[:id])
+  # end
 
 
   def user_params

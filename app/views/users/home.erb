@@ -1,21 +1,23 @@
 <h1>Welcome <%= @user.full_name %></h1>
 <%= button_to "Log out", logout_path, :method => :delete %>
 
-<h2>Add Places You Have Lived And Visited!</h2>
+<h2>Add Places You Have Lived, Visited And Want To Go!</h2>
 
 <%= link_to "Add Places", new_place_path %>
-<%= form_tag(controller: 'places', action: 'create', method: 'post') %>
-  <%= label_tag :city %>
-  <%= text_field_tag :city %>
-  <br>
-  <%= label_tag :country %>
-  <%= text_field_tag :country %>
-  <br>
-  <%= submit_tag "Submit" %>
+
 
 
   <h2>Places You've Been To!</h2>
-  <% @user.places.each do |place| %>
+  <% @user.visited_places.each do |place| %>
+  <ul>
+    <li>
+      <%= link_to "#{place.city} - #{place.country}", place_path(place) %>
+    </li>
+  </ul>
+  <% end %>
+
+  <h2>Places I will Go To Someday</h2>
+  <% @user.will_go_to_someday.each do |place| %>
   <ul>
     <li>
       <%= link_to "#{place.city} - #{place.country}", place_path(place) %>
