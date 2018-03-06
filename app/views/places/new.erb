@@ -1,0 +1,12 @@
+<%= form_tag places_path do %>
+  <% @places.each do |place| %>
+    <%= fields_for 'places[]', place do |p| %>
+
+    <%= label_tag "Place"%><br>
+    <%= text_field_tag :place %><br>
+    <%= label_tag "Country"%><br>
+    <%= text_field_tag :country %><br>
+    <% end %>
+  <% end %>
+  <%= submit_tag "Submit" %>
+<% end %>
