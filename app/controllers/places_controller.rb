@@ -1,9 +1,6 @@
 class PlacesController < ApplicationController
   def new
-    @places = []
-    4.times do
-      @places << Place.new
-    end
+    @place = Place.new
   end
 
   def create
@@ -13,6 +10,6 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :country)
+    params.permit(:name, :country)
   end
 end

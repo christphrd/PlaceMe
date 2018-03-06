@@ -2,3 +2,21 @@
 <%= button_to "Log out", logout_path, :method => :delete %>
 
 <h2>Add Places You Have Lived And Visited!</h2>
+<!-- # <%= form_for @user do |f| %>
+#   <%= f.fields_for :user_places do |p| %>
+#     <%= p.label :name%><br>
+#     <%= p.text_field :name %><br>
+#     <%= p.label :country%><br>
+#     <%= p.text_field :country %><br>
+#   <% end %>
+#   <%= f.submit "Submit" %>
+# <% end %> -->
+
+<%= form_tag(controller: 'places', action: 'create', method: 'post') %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <br>
+  <%= label_tag :country %>
+  <%= text_field_tag :country %>
+  <br>
+  <%= submit_tag "Submit" %>
