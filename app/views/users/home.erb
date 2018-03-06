@@ -1,2 +1,10 @@
 <h1>Welcome <%= @user.full_name %></h1>
 <%= button_to "Log out", logout_path, :method => :delete %>
+
+<h1>List Places You Lived and Visited</h1><br>
+<%= form_tag places_path do %>
+  <%= label_tag "Hometown"%><br>
+  <%= text_field_tag :place %><br>
+
+  <%= submit_tag "Submit" %>
+<% end %>

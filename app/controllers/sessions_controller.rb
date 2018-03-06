@@ -11,8 +11,7 @@ class SessionsController < ApplicationController
       if @user && @user.authenticate(params[:session][:password])
         # user = user.try(:authenticate, params[:user][:password])
         log_in @user
-        byebug
-        redirect_to "/users/home/#{@user.id}"
+        redirect_to "/home/#{@user.id}"
         # return redirect_to(controller: 'sessions', action: 'new') unless user
         # session[:user_id] = user.id
         # @user = user

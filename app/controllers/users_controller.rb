@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :get_user, only: [:home, :show]
   before_action :require_login
   before_action :authorize_page, only: [:home]
-  skip_before_action :require_login, only: [:new]
+  skip_before_action :require_login, only: [:new, :create]
 
   def new
     @user = User.new
@@ -13,8 +13,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     return redirect_to controller: 'users', action: 'new' unless @user.save
     session[:user_id] = @user.id
-
-    redirect_to "/users/home/#{@user.id}"
+    redirect_to "/home/#{@user.id}"
     # redirect_to controller: 'welcome', action: 'home'
 
     # @user = User.new(user_params)
