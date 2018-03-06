@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :users, only: [:create, :show, :new]
-  resources :places, only: [:new, :create, :show]
+  resources :users, only: [:create, :show, :new, :index]
+  resources :places, only: [:new, :create, :show, :index]
 
   get '/', to: 'static#welcome'
   get '/login', to: 'sessions#new'

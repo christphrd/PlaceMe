@@ -3,12 +3,16 @@ class PlacesController < ApplicationController
   # before_action :require_login
   # before_action :authorize_page
 
+  def index
+    @places = Place.all
+  end
+
   def new
     @place = Place.new
   end
 
   def create
-
+    byebug
     @place = Place.find_or_create_by(place_params)
     @user = User.find(session[:user_id])
     if @place
@@ -31,6 +35,7 @@ class PlacesController < ApplicationController
   end
 
   def place_params
+    params.each { |key, value| value.strip! }
     params.permit(:city, :country)
   end
 
