@@ -7,6 +7,12 @@ class PlacesController < ApplicationController
   end
 
   def create
-    #code
+    byebug
+  end
+
+  private
+
+  def place_params
+    params.require(:place).permit(:name, :country)
   end
 end
