@@ -1,0 +1,8 @@
+<%= form_tag(controller: 'places', action: 'create', method: 'post') %>
+  <%= label_tag :city %>
+  <%= text_field_tag :city %>
+  <br>
+  <%= label_tag :country %>
+  <%= text_field_tag :country %>
+  <br>
+  <%= submit_tag "Submit" %>
