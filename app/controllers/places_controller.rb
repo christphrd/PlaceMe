@@ -1,5 +1,8 @@
 class PlacesController < ApplicationController
   before_action :get_place, only: [:show]
+  # before_action :require_login
+  # before_action :authorize_page
+
   def new
     @place = Place.new
   end
@@ -11,7 +14,6 @@ class PlacesController < ApplicationController
     if @place
       @user.places << @place
       @user_place = UserPlace.find_by(user_id: @user.id, place_id: @place.id)
-      byebug
       @user_place.update(user_place_params)
       redirect_to "/home/#{@user.id}"
     else
