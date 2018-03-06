@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
   def new
-    # byebug
+    @comment = Comment.new
   end
 end
