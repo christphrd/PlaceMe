@@ -4,6 +4,9 @@ class User < ApplicationRecord
   has_many :comments
   accepts_nested_attributes_for :places
   has_secure_password
+  validates :email, uniqueness: { case_sensitive: false }
+  validates :email, :password, :first_name, :last_name, presence: true
+  validates :email, 'valid_email_2/email': { mx: true, disposable: true, disallow_subaddressing: true}
 
   def full_name
     "#{first_name} #{last_name}"
