@@ -16,7 +16,9 @@
 
   <h2>Places You've Been To!</h2>
   <% @user.places.each do |place| %>
-  
-  <%= place.city %>
-  <%= place.country %>
+  <ul>
+    <li>
+      <%= link_to "#{place.city} - #{place.country}", place_path(place) %>
+    </li>
+  </ul>
   <% end %>
