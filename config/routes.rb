@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users, only: [:create, :show, :new, :index]
   resources :places, only: [:new, :create, :show, :index]
-
+  resources :comments, only: [:new, :create]
   get '/', to: 'static#welcome'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

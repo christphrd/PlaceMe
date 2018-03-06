@@ -12,7 +12,6 @@ class PlacesController < ApplicationController
   end
 
   def create
-    byebug
     @place = Place.find_or_create_by(place_params)
     @user = User.find(session[:user_id])
     if @place
