@@ -10,6 +10,9 @@ class PlacesController < ApplicationController
     @user = User.find(session[:user_id])
     if @place
       @user.places << @place
+      @user_place = UserPlace.find_by(user_id: @user.id, place_id: @place.id)
+      byebug
+      @user_place.update(user_place_params)
       redirect_to "/home/#{@user.id}"
     else
       render :new
@@ -27,5 +30,10 @@ class PlacesController < ApplicationController
 
   def place_params
     params.permit(:city, :country)
+  end
+
+  def user_place_params
+
+    params.permit(:future)
   end
 end
