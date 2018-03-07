@@ -2,6 +2,7 @@ class Place < ApplicationRecord
   has_many :user_places
   has_many :users, through: :user_places
   has_many :comments
+  has_many :photos
   validates :city, presence: true
 
 

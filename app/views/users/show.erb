@@ -6,7 +6,7 @@
     <% @user.visited_places.each do |place| %>
     <ul>
       <li>
-        <%= link_to "#{place.city} - #{place.country}", place_path(place) %>
+        <%= link_to "#{place.city}", place_path(place) %>
 
       </li>
     </ul>
@@ -19,7 +19,7 @@
   <% @user.will_go_to_someday.each do |place| %>
   <ul>
     <li>
-      <%= link_to "#{place.city} - #{place.country}", place_path(place) %>
+      <%= link_to "#{place.city}", place_path(place) %>
     </li>
   </ul>
   <% end %>
