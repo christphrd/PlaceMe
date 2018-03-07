@@ -1,8 +1,15 @@
 <h1>All Places</h1>
-<ul>
-<% @places.each do |place| %>
-  <li>
-    <%= link_to place.city, place_path(place) %>
-  </li>
-  <% end %>
-</ul>
+
+
+  <div class="container">
+    <div class="row">
+
+      <% @places.each do |place| %>
+      <span>
+        <%= link_to place.city, place_path(place) %> ||
+      </span>
+      <% end %>
+
+      <div class="col">Column</div>
+    </div>
+  </div>

@@ -35,9 +35,18 @@
 
  img {
   max-width: 100%;
+  /* background-color: black; */
   margin: 0;
  }
 
+.image_control {
+  background-color: black;
+}
+
+footer {
+  text-align: center;
+
+}
 
 
 
