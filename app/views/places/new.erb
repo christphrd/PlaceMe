@@ -1,7 +1,7 @@
-<%#= form_tag(controller: 'places', action: 'create', method: 'post') %>
-  <%#= label_tag :city %>
-  <%#= text_field_tag :city %>
-  <!-- <br> -->
-  <%#= label_tag "Going There Some Day" %>
-  <%#= check_box_tag :future %>
-  <%#= submit_tag "Submit" %>
+<%= form_tag(controller: 'places', action: 'create', method: 'post') %>
+  <%= label_tag :city %>
+  <%= collection_select :city, :id, Place.all, :id, :city %>
+  <br>
+  <%= label_tag "Going There Some Day" %>
+  <%= check_box_tag :future %>
+  <%= submit_tag "Submit" %>

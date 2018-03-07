@@ -8,11 +8,12 @@ class PlacesController < ApplicationController
   end
 
   def new
-    @place = Place.new
+    @user_place = UserPlace.new
   end
 
   def create
-    @place = Place.find_or_create_by(place_params)
+
+    @place = Place.find(place_params[:id])
     @user = User.find(session[:user_id])
     if @place
       @user.places << @place
@@ -35,8 +36,8 @@ class PlacesController < ApplicationController
   end
 
   def place_params
-    params.each { |key, value| value.strip! }
-    params.permit(:city, :country)
+    # params.each { |key, value| value.strip! }
+    params.require(:city).permit(:id)
   end
 
   def user_place_params
