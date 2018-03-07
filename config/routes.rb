@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get '/home/:id', to: 'users#home'
   post '/home/:id', to: 'places#create'
   # get '/users/signup', to: 'users#new'
-
+  # post '/places/:id', to: 'comments#new'
 end

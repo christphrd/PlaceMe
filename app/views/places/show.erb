@@ -21,4 +21,4 @@
 </ul>
 <% end %>
 
-<%= link_to "Add Comment On This Person's Place", new_comment_path%>
+<%= link_to "Add Comment On This Person's Place", {:controller => "comments", :action => "new", :place => @place}%>
