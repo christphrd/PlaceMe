@@ -25,6 +25,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @place_comments = @place.comments
   end
 
   private

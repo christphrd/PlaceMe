@@ -1,6 +1,6 @@
 <%= form_for @comment do |f| %>
   <%= f.label "Your Text Here!" %>
   <%= f.text_area :content %>
-  <%= hidden_field_tag(:place, @place) %>
+  <%= f.hidden_field(:place_id, value: @place) %>
   <%= f.submit "Add Comment", :class => "btn btn-primary" %>
 <% end %>
