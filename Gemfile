@@ -32,6 +32,13 @@ gem 'bcrypt', '~> 3.1.7'
 
 #email validation gem
 gem "valid_email2"
+
+#json gem
+gem 'json'
+
+#rest request gem
+gem 'rest-client'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

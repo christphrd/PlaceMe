@@ -2,7 +2,7 @@ class Place < ApplicationRecord
   has_many :user_places
   has_many :users, through: :user_places
   has_many :comments
-  validates :city, :country, presence: true
+  validates :city, presence: true
 
 
   def people_who_been
