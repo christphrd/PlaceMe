@@ -3,10 +3,10 @@
 
 <h2>Add Places You Have Lived, Visited And Want To Go!</h2>
 
-<%= link_to "Add Places", new_place_path %>
+<%= link_to "Add Places", new_place_path, :class => "btn btn-primary" %>
 
 
-
+<div class="beento">
   <h2>Places You've Been To!</h2>
   <% @user.visited_places.each do |place| %>
   <ul>
@@ -18,6 +18,9 @@
 
   <% end %>
 
+</div>
+
+<div class="someday">
   <h2>Places I will Go To Someday</h2>
   <% @user.will_go_to_someday.each do |place| %>
   <ul>
@@ -26,3 +29,5 @@
     </li>
   </ul>
   <% end %>
+
+</div>
