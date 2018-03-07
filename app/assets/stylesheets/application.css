@@ -23,14 +23,19 @@
 
  div.center {
    text-align: center;
-   margin-left: 5em;
-   margin-right: 5em;
-   margin-top: 10em;
+   /* margin-left: 5em;
+   margin-right: 5em; */
+   /* margin-top: 10em; */
    margin-bottom: 5em;
  }
 
  li {
    list-style: none;
+ }
+
+ img {
+  max-width: 100%;
+  margin: 0;
  }
 
 
