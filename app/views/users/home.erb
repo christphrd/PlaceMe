@@ -5,22 +5,19 @@
 
 <%= link_to "Add Places", new_place_path, :class => "btn btn-primary" %>
 
-
-<div class="beento">
+<div class="all_places">
+<div class="been_to">
   <h2>Places You've Visited And Lived!</h2>
   <% @user.visited_places.each do |place| %>
   <ul>
     <li>
       <%= link_to "#{place.city}", place_path(place) %>
     </li>
-
   </ul>
-
   <% end %>
-
 </div>
 
-<div class="someday">
+<div class="wiil_go">
   <h2>Places You Will Go To Someday</h2>
   <% @user.will_go_to_someday.each do |place| %>
   <ul>
@@ -29,5 +26,5 @@
     </li>
   </ul>
   <% end %>
-
+</div>
 </div>
