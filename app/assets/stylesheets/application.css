@@ -51,15 +51,32 @@ body{
 }
 
 .footer_bottom {
-  margin-bottom: 0;
-  bottom: 0;
   width: 100%;
+  top: 90%;
   height: 60px;
   font-size: 10px;
-  position: absolute;
+  position: fixed;
   text-align: center;
   transform: scale(2.0);
-  top: 95%;
+  background-color: grey;
+  color: white;
+
+}
+
+.footer_bottom_users {
+  width: 100%;
+  top: 10%;
+  height: 60px;
+  font-size: 10px;
+  position: relative;
+  text-align: center;
+  transform: scale(2.0);
+
+
+}
+
+.table-grid__cell{
+  margin-top: 1.5%;
 }
 
 footer {
