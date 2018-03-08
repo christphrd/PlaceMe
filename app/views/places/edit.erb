@@ -6,5 +6,5 @@
   <%= button_to "delete", {:controller => :places,
       :action => 'destroy', :id => id }, :method => :delete %> %>
   <%= hidden_field_tag :place_id, @place.id %>
-  <%= submit_tag "Update" %>
+  <%= submit_tag "Update", :class => "btn btn-primary"%>
 <% end %>

@@ -2,8 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .all_places {
-
-
   margin-right: 5px;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+ font-weight:      bold;
+ color:            black;
+}
+
+a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+.form {
+  margin-top: 20%;
 }
