@@ -12,6 +12,15 @@ cities_list_arr.each do |city|
   Place.create(city: city["name"])
 end
 
+# cities_list_arr.each do |city|
+#   city_unparsed = RestClient.get("#{city['href']}")
+#   city_hash = JSON.parse(city_unparsed)
+#   country = city_hash["_links"]["ua:countries"][0]["name"]
+#   # continent = city_hash["_links"]["ua:continent"]["name"]
+#   # Place.create(city: city["name"], country: country, continent: continent)
+#   Place.create(city: city["name"], country: country)
+# end
+
 
 cities_list_arr.each do |city|
   photos_unparsed = RestClient.get("#{city['href']}images")
