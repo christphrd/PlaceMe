@@ -12,6 +12,7 @@
   <ul>
     <li>
       <%= link_to "#{place.city}", place_path(place) %>
+      <%= link_to "- Edit", edit_place_path(:place_id => place) %>
     </li>
   </ul>
   <% end %>
