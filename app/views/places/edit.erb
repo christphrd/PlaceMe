@@ -1,9 +1,9 @@
 <%= form_tag({controller: 'places', action: 'update', method: 'put'}) do %>
   <h1><%= link_to @place.city, place_path(@place) %></h1>
   <%= label_tag "Going There Some Day" %>
-  <%= check_box_tag :future %>
+  <%= check_box_tag :future %><br>
   <%= hidden_field_tag :place_id, @place.id %>
-  <%= submit_tag "Update" %>
-<% end %>
+  <%= submit_tag "Update", :class=>"btn btn-primary" %>
+<% end %><br>
 
-<%= button_to "delete", {:controller => :places, :action => 'destroy'}, :method => :delete, params: { place_id: @place.id } %>
+<%= button_to "Delete from Your List", {:controller => :places, :action => 'destroy'}, :method => :delete, params: { place_id: @place.id }, :class=>"btn btn-danger", data: {confirm: "Are you sure?"}  %>

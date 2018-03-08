@@ -1,7 +1,14 @@
 <div class="image_control">
   <img src="<%= @place.photos[0][:url] %>" alt=""/>
 </div>
-<h1><%= @place.city %></h1><br>
+<h1><%= @place.city %></h1>
+<span class="place_header">
+
+  <h1><%= @place.country %> - <%= @place.continent %></h1>
+
+</span>
+
+
 
 <div class="all_places">
 
@@ -33,14 +40,18 @@
 <br>
 
 <span class="comments">
-
+  <%= link_to "Add Comment On This Place", {:controller => "comments", :action => "new", :place => @place}%>
+<br>
+<br>
   <h4>Comments:</h4>
   <% @place_comments.each do |comment| %>
   <% @user = User.find(comment.user_id) %>
-  <p><%= link_to @user.full_name, user_path(@user) %> says:</p>
-  <p><%= comment.content %></p>
+  <div class="card">
+    <p><%= link_to @user.full_name, user_path(@user) %> says:</p>
+    <p><%= comment.content %></p>
+  </div>
+  <br>
   <% end %>
-  <%= link_to "Add Comment On This Place", {:controller => "comments", :action => "new", :place => @place}%>
 </span>
 
 
