@@ -39,6 +39,10 @@ class PlacesController < ApplicationController
     redirect_to '/'
   end
 
+  def destroy
+    byebug
+  end
+
   def show
     @place_comments = @place.comments
   end
