@@ -26,7 +26,7 @@ class PlacesController < ApplicationController
   end
 
   def edit
-    @user_place = UserPlace.new
+    @user_place = UserPlace.find_by(place_id: params[:place_id], user_id: params[:id])
   end
 
   def update
@@ -45,6 +45,7 @@ class PlacesController < ApplicationController
 
   def place_params
     # params.each { |key, value| value.strip! }
+
     params.require(:city).permit(:id)
   end
 
