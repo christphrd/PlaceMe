@@ -32,6 +32,7 @@ class PlacesController < ApplicationController
 
   def update
     @user_place = UserPlace.find_by(place_id: params[:place_id], user_id: params[:id])
+    byebug
     @user_place.update(future: params[:future])
     redirect_to '/'
   end
