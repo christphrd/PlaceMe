@@ -20,6 +20,11 @@
    text-align: center;
  }
 
+ .logout {
+   margin-left: 7px;
+   margin-top: 1px;
+ }
+
 
  div.center {
    text-align: center;
@@ -35,13 +40,14 @@
 
  img {
   max-width: 100%;
-  height: 100%;
+  /* height: 100%; */
   /* background-color: black; */
   margin: 0;
  }
 
 .image_control {
-  background-color: black;
+
+  border-color: black;
 }
 
 .footer_bottom {
@@ -54,4 +60,8 @@
 
 footer {
   text-align: center;
+}
+
+h1{
+  padding: 15px;
 }
