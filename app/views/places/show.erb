@@ -34,7 +34,7 @@
 
 <span class="comments">
 
-  <h4>Comments:</h4>
+  <h4>Most Recent Comments:</h4>
   <% @place_comments.each do |comment| %>
   <% @user = User.find(comment.user_id) %>
   <p><%= link_to @user.full_name, user_path(@user) %> says:</p>

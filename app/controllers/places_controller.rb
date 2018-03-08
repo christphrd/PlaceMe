@@ -46,7 +46,7 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @place_comments = @place.comments
+    @place_comments = @place.comments.reverse
   end
 
   private
