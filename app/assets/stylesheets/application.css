@@ -18,6 +18,7 @@
 
  h1 {
    text-align: center;
+   padding: 15px;
  }
 
  .logout {
@@ -62,10 +63,12 @@ footer {
   text-align: center;
 }
 
-h1{
-  padding: 15px;
+a {
+  color: #007bff;
 }
+
 
 body {
   width: 100%;
+  color: 		DimGrey;
 }

@@ -1,10 +1,10 @@
 // Place all the styles related to the Places controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body div.all_places {
+.all_places {
   // text-align: center;
-  width: 100%;
-  padding-left: 2%;
+  // width: 100%;
+  // padding-left: 2%;
 }
 
 a {
@@ -14,7 +14,7 @@ a {
 }
 
 a:hover {
-  color: red;
+  color: MediumSeaGreen ;
   text-decoration: none;
 }
 
