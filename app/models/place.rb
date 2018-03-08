@@ -18,4 +18,10 @@ class Place < ApplicationRecord
     end.map {|user_place| user_place.user}
   end
 
+  def city_and_country
+    "#{self.city} - #{self.country}"
+  end
+
+
+
 end

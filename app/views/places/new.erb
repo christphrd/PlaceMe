@@ -1,10 +1,10 @@
 <div class="form">
 <%= form_tag(controller: 'places', action: 'create', method: 'post') %>
 <%= label_tag :city %>
-<%= collection_select :city, :id, Place.all, :id, :city %>
+<%= collection_select :city, :id, Place.all, :id, :city_and_country %>
 <br>
-<%= label_tag "Going There Some Day" %>
-<%= check_box_tag :future %>
-<%= submit_tag "Submit", :class => "btn btn-primary" %>
+<span class="checkbox">
+<p><%= check_box_tag :future %>Haven't Been There Yet<p>
+</span><%= submit_tag "Submit", :class => "btn btn-primary" %>
 
 </div>

@@ -1,7 +1,9 @@
 <%= form_tag({controller: 'places', action: 'update', method: 'put'}) do %>
   <h1><%= link_to @place.city, place_path(@place) %></h1>
-  <%= label_tag "Going There Some Day" %>
-  <%= check_box_tag :future %><br>
+  <h1><%= @place.country %> - <%= @place.continent %></h1>
+  <span class="checkbox">
+  <p><%= check_box_tag :future %>Haven't Been There Yet<p>
+</span>
   <%= hidden_field_tag :place_id, @place.id %>
   <%= submit_tag "Update", :class=>"btn btn-primary" %>
 <% end %><br>
