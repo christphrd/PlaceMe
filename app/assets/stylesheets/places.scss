@@ -1,9 +1,10 @@
 // Place all the styles related to the Places controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.all_places {
-  margin-right: 5px;
-  text-align: center;
+body div.all_places {
+  // text-align: center;
+  width: 100%;
+  padding-left: 2%;
 }
 
 a {
@@ -21,18 +22,18 @@ a:hover {
   margin-top: 20%;
 }
 
-.been_to {
-  margin-left: 20%;
+body div.been_to {
   text-align: center;
   float: left;
 }
 
-.will_go {
-  margin-left: 20%;
+body div.will_go {
   text-align: center;
-  float: left;
+  // float: left;
 }
 
 .comments {
   text-align: center;
+
+
 }
