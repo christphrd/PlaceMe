@@ -1,5 +1,5 @@
 <div class="image_control">
-  <img src="<%= @place.photos[0][:url] %>" alt="">
+  <img src="<%= @place.photos[0][:url] %>" alt=""/>
 </div>
 <h1><%= @place.city %></h1><br>
 
@@ -27,18 +27,17 @@
 </div>
 
 
-<br>
 
-<!-- <span class="comments"> -->
+<span class="comments">
+
   <h4>Comments:</h4>
   <% @place_comments.each do |comment| %>
   <% @user = User.find(comment.user_id) %>
   <p><%= link_to @user.full_name, user_path(@user) %> says:</p>
   <p><%= comment.content %></p>
   <% end %>
-<!-- </span> -->
+  <%= link_to "Add Comment On This Place", {:controller => "comments", :action => "new", :place => @place}%>
+</span>
 
 
 <br>
-
-<%= link_to "Add Comment On This Place", {:controller => "comments", :action => "new", :place => @place}%>
