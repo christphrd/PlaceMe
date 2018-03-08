@@ -25,6 +25,14 @@ class PlacesController < ApplicationController
     end
   end
 
+  def edit
+    @user_place = UserPlace.new
+  end
+
+  def update
+
+  end
+
   def show
     @place_comments = @place.comments
   end
