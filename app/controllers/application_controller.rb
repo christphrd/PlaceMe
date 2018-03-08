@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
     @user = User.find(params[:id])
   end
 
+  def session_user
+    @user = User.find(session[:user_id])
+  end
+
 end
