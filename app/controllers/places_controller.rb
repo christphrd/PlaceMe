@@ -40,7 +40,9 @@ class PlacesController < ApplicationController
   end
 
   def destroy
-    byebug
+    @user_place = UserPlace.find_by(place_id: params[:place_id], user_id: session[:user_id])
+    @user_place.delete
+    redirect_to '/'
   end
 
   def show
