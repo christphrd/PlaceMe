@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :places
   has_secure_password
-  validates :email, uniqueness: { case_sensitive: false }
+  # validates :email, uniqueness: true
+  validates_uniqueness_of :email, :case_sensitive => false
   validates :email, :password, :first_name, :last_name, presence: true
   validates :email, 'valid_email_2/email': { mx: true, disposable: true, disallow_subaddressing: true}
 

@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   before_action :get_place, only: [:show]
-  # before_action :require_login
+  before_action :require_login
   # before_action :authorize_page
 
   def index

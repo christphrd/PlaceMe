@@ -4,11 +4,14 @@ class ApplicationController < ActionController::Base
 
   def authorize_page
     # byebug
-    return head(:forbidden) unless session[:user_id] == @user.id
+    head(:forbidden) unless session[:user_id] == @user.id
   end
 
   def require_login
-    return head(:forbidden) unless session.include? :user_id
+    # head(:forbidden) unless session.include? :user_id
+    unless session.include? :user_id
+      redirect_to '/'
+    end
   end
 
   def get_user
