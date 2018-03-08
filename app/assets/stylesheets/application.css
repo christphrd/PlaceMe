@@ -65,3 +65,7 @@ footer {
 h1{
   padding: 15px;
 }
+
+body {
+  width: 100%;
+}
