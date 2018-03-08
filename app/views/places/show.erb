@@ -1,38 +1,43 @@
 <div class="image_control">
   <img src="<%= @place.photos[0][:url] %>" alt="">
-
 </div>
 <h1><%= @place.city %></h1><br>
-<!-- <h1><%#= @place.country %></h1><br> -->
+
+<div class="been_to">
+  <h4>People Who Have Been Here</h4>
+  <% @place.people_who_been.each do |user| %>
+  <ul>
+    <li>
+      <%= link_to "#{user.full_name}", user_path(user) %>
+    </li>
+  </ul>
+  <% end %>
+</div>
 
 
-<h4>People Who Have Been Here</h4>
+<div class="will_go">
+  <h4>People Who Will Go Here Someday</h4>
+  <% @place.people_wishlist.each do |user| %>
+  <ul>
+    <li>
+      <%= link_to "#{user.full_name}", user_path(user) %>
+    </li>
+  </ul>
+  <% end %>
+</div>
 
-<% @place.people_who_been.each do |user| %>
-<ul>
-  <li>
-    <%= link_to "#{user.full_name}", user_path(user) %>
-  </li>
-</ul>
-<% end %>
 
-<h4>People Who Will Go Here Someday</h4>
+<br>
 
-<% @place.people_wishlist.each do |user| %>
-<ul>
-  <li>
-    <%= link_to "#{user.full_name}", user_path(user) %>
-  </li>
-</ul>
-<% end %>
+<!-- <span class="comments"> -->
+  <h4>Comments:</h4>
+  <% @place_comments.each do |comment| %>
+  <% @user = User.find(comment.user_id) %>
+  <p><%= link_to @user.full_name, user_path(@user) %> says:</p>
+  <p><%= comment.content %></p>
+  <% end %>
+<!-- </span> -->
 
-<h4>Comments:</h4>
-<% @place_comments.each do |comment| %>
-<% @user = User.find(comment.user_id) %>
-<p><%= link_to @user.full_name, user_path(@user) %> says:</p>
-<p><%= comment.content %></p>
-
-<% end %>
 
 <br>
 
