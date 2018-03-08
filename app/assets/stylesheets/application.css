@@ -50,7 +50,7 @@ body{
   border-color: black;
 }
 
-.footer_bottom {
+/* .footer_bottom {
   width: 100%;
   top: 90%;
   height: 60px;
@@ -61,9 +61,18 @@ body{
   background-color: grey;
   color: white;
 
+} */
+
+.footer_bottom {
+  position: absolute;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ padding: 1rem;
+
 }
 
-.footer_bottom_users {
+/* .footer_bottom_users {
   width: 100%;
   top: 10%;
   height: 60px;
@@ -73,7 +82,7 @@ body{
   transform: scale(2.0);
 
 
-}
+} */
 
 .table-grid__cell{
   margin-top: 1.5%;

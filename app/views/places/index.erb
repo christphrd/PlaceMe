@@ -3,9 +3,9 @@
   <div class="container">
     <div class="row">
       <% @places.each do |place| %>
-      <div class='all_places'>
-        <%= link_to place.city, place_path(place) %> •
-      </div>
+
+        <div class="space"><%= link_to place.city, place_path(place) %> •   </div>
+
       <% end %>
     </div>
   </div>
