@@ -2,6 +2,6 @@
   <h1><%= link_to @place.city, place_path(@place) %></h1>
   <%= label_tag "Going There Some Day" %>
   <%= check_box_tag :future %>
-  <% hidden_field_tag :place_id, @place.id %>
+  <%= hidden_field_tag :place_id, @place.id %>
   <%= submit_tag "Update" %>
 <% end %>
