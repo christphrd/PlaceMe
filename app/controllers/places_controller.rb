@@ -32,7 +32,6 @@ class PlacesController < ApplicationController
 
   def update
     @user_place = UserPlace.find_by(place_id: params[:place_id], user_id: params[:id])
-    byebug
     if !params[:future]
       params[:future] = false
     end
