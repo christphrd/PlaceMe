@@ -16,8 +16,7 @@ class PlacesController < ApplicationController
     @place = Place.find(place_params[:id])
     @user = User.find(session[:user_id])
     if @place
-      @user.places << @place
-      @user_place = UserPlace.find_by(user_id: @user.id, place_id: @place.id)
+      @user_place = UserPlace.find_or_create_by(user_id: @user.id, place_id: @place.id)
       @user_place.update(user_place_params)
       redirect_to "/home/#{@user.id}"
     else

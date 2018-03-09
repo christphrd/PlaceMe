@@ -22,6 +22,4 @@ class Place < ApplicationRecord
     "#{self.city} - #{self.country}"
   end
 
-
-
 end
