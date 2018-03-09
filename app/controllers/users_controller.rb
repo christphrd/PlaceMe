@@ -29,11 +29,14 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    @user = session_user
   end
 
   def update
-
+    @user = session_user
+    user_params[:bio] = nil if user_params[:bio] == ""
+    @user.update_column(:bio, user_params[:bio])
+    redirect_to '/'
   end
 
 
@@ -54,6 +57,6 @@ class UsersController < ApplicationController
 
   def user_params
     # params.each { |key, value| value.strip!}
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :places_attributes => [:name, :country])
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :bio, :password_confirmation, :places_attributes => [:name, :country])
   end
 end

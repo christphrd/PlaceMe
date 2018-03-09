@@ -1,8 +1,12 @@
 <h1>Welcome <%= @user.full_name %></h1>
 <%#= button_to "Log out", logout_path, :method => :delete %>
-<h2>Add or edit your bio</h2>
+<h2>Tell us about yourself</h2>
 
-<h2>Add Places You Have Lived, Visited And Want To Go!</h2>
+<%= link_to "Biography", edit_user_path, :class => "btn btn-primary add_btn" %><br>
+
+<%= @user.bio %>
+
+<p><h2>Add Places You Have Lived, Visited And Want To Go!</h2></p>
 
 <%= link_to "Add Places", new_place_path, :class => "btn btn-primary add_btn" %>
 
