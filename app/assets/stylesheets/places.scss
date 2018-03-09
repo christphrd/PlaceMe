@@ -20,6 +20,7 @@ a:hover {
 
 body div.been_to {
   text-align: center;
+
   float: left;
 }
 
@@ -49,4 +50,15 @@ body div.will_go {
 .space {
   padding: 4px;
   overflow: none;
+}
+
+body.div.all_places {
+  margin-top: 3em;
+  margin-left: 50%;
+}
+
+.show_been_to {
+  text-align: center;
+  margin-left: 22%;
+  float: left;
 }
