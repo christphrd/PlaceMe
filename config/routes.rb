@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only: [:create, :show, :new, :index]
+  resources :users, only: [:create, :show, :new, :index, :edit, :update]
   resources :places, only: [:new, :create, :show, :index, :edit, :destroy]
   resources :comments, only: [:new, :create]
   get '/', to: 'static#welcome'
