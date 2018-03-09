@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   # get '/users/signup', to: 'users#new'
   # post '/places/:id', to: 'comments#new'
   get '/search', to: 'search#search'
+  get '/places/add/:id', to: 'places#add'
+  post '/places/add/:id', to: 'places#added'
 end

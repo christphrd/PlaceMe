@@ -8,6 +8,9 @@
 
 </span>
 
+<% if !UserPlace.find_by(user_id: session[:user_id], place_id: @place.id) %>
+<%= link_to "Add #{@place.city_and_country}", "/places/add/#{@place.id}", :class => "btn btn-primary add_btn" %>
+<% end %>
 
 
 <div class="all_places">

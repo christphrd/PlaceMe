@@ -12,7 +12,6 @@ class PlacesController < ApplicationController
   end
 
   def create
-
     @place = Place.find(place_params[:id])
     @user = User.find(session[:user_id])
     if @place
@@ -22,6 +21,20 @@ class PlacesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def add
+    @place = Place.find(params[:id])
+  end
+
+  def added
+    @place = Place.find(add_place_params[:id])
+    @user = User.find(session[:user_id])
+    if !params[:future]
+      params[:future] = false
+    end
+    @user_place = UserPlace.find_or_create_by(user_id: @user.id, place_id: @place.id, future: params[:future])
+    redirect_to place_path(@place)
   end
 
   def edit
@@ -63,5 +76,9 @@ class PlacesController < ApplicationController
   def user_place_params
 
     params.permit(:future)
+  end
+
+  def add_place_params
+    params.permit(:future, :id)
   end
 end
