@@ -26,10 +26,12 @@
           <li class="nav-item">
             <a class="nav-link" href="/places">Places</a>
           </li>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="In Development" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+          <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+            <div class="col-xs-4">
+              <input class="form-control mr-sm-2" type="search" placeholder="Country or Continent" aria-label="Search" name="q">
+            </div>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
         <div class="logout">
           <% if logged_in?%>
           <%= button_to "Log out", logout_path, :method => :delete, :class => "btn btn-warning" %>

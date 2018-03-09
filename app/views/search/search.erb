@@ -1,0 +1,4 @@
+<h1><%= @region %></h1>
+<% @search_places.each do |place| %>
+  <%= link_to place.city, place_path(place) %>
+<% end %>
